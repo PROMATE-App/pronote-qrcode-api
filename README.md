@@ -1,36 +1,3 @@
-# Pronote QR Code API
-
-Cette API n'est absolument pas terminée, nous sommes deux ou trois à avancer dessus de temps en temps pour comprendre comment l'API Qrcode de pronote fonctionne pour arriver à l'utiliser dans d'autres applications non officielles. Ce repo permet de partager les résultats
-
-## Objectif
-
-L'idéal serait de pouvoir faire quelque chose comme ça :
-
-```js
-const pronote = require('pronote-api');
-const qrcode = require('pronote-qrcode-api');
-
-qrcode.login(buffer, code).then((data) => { // buffer est l'image du qrcode, code est le JETON_4_CHIFFRE
-
-  // data contient le sessionID, etc. les paramètres listés ici : https://github.com/Litarvan/pronote-api/blob/master/src/session.js#L28
-
-  const session = new pronote.Session(data); 
-
-  session.homeworks(); // par exemple
-
-})
-```
-
-mais en réalité ça ne sera pas extactement comme ça (le login renverra un login et un mdp avec lesquels on se connectera)
-
-## Lancement
-
-Lancer le script qui extrait quelques infos
-
-```js
-node index.js --input qrcode.png --code 1111
-```
-
 ## Fonctionnement
 
 ### Contenu du QR Code
